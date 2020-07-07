@@ -1,0 +1,36 @@
+name: base
+
+channels:
+  - nodefaults
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
+
+dependencies:
+  - fastqc
+  - multiqc
+  - fastp
+  - salmon
+  - star
+  - bowtie2
+  - subread
+  - stringtie
+  - samtools
+  - bedtools
+  - deeptools
+  - gffread
+
+
+  # - fastqc=0.11.8
+  # - multiqc=1.7
+  # - fastp=0.20.0
+  # - salmon=0.14.1
+  # - star=2.7.2b
+  # - bowtie2=2.3.5
+  # - subread=1.6.4
+  # - stringtie=2.0
+  # - samtools=1.9
+  # - bedtools=2.29.0
+  # - deeptools=3.3.1
+  # - gffread=0.11.4

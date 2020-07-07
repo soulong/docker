@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  frps:
+    image: cloverzrg/frps-docker
+    restart: always
+    ports:
+      - 5443:5443
+      - 6443:6443
+      - 8080:8080
+      - 8443:8443
+    volumes:
+      - ./frps.ini:/conf/frps.ini
+
+  nginx:
+    image: nginx:alpine
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/conf.d:/etc/nginx/conf.d

@@ -1,0 +1,39 @@
+version: "3.5"
+services:
+  aria2-ui:
+    restart: unless-stopped
+    image: wahyd4/aria2-ui:latest
+    environment:
+      - RPC_SECRET=Hello
+      - ENABLE_AUTH=true
+      - ARIA2_USER=aria2
+      - ARIA2_PWD=aria2
+   #   - DOMAIN=http://toozhao.com
+      - ARIA2_EXTERNAL_PORT=80
+
+
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./data:/data
+      - ./app/filebrowser.db:/app/filebrowser.db
+    #  - ./app/yoursslkeys/:/app/conf/key
+      - ./app/conf:/app/conf
+
+
+
+
+  -e ENABLE_AUTH=true \
+  -e RPC_SECRET=Hello \
+
+  -e DOMAIN=https://example.com \
+
+  -e ARIA2_SSL=false \
+  -e ARIA2_USER=user \
+  -e ARIA2_PWD=pwd \
+  -e ARIA2_EXTERNAL_PORT=443 \
+  -v /yourdata:/data \
+  -v /app/a.db:/app/filebrowser.db \
+  -v /yoursslkeys/:/app/conf/key \
+  -v <the folder of aria2.conf and aria2.session>:/app/conf \
